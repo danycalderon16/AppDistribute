@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:id="@+id/layout_super"
         android:orientation="horizontal">
 
@@ -66,7 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="6 "
+                android:text="3"
                 android:textSize="18sp" />
 
             <TextView
@@ -97,7 +97,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:background="@color/blue_primary"
+        android:background="@color/colorPrimaryDark"
         android:text="Solicitar Conductor"
         android:textSize="20sp"
         android:textColor="#FFF" />

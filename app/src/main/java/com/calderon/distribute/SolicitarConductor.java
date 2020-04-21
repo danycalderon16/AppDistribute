@@ -15,7 +15,7 @@ public class SolicitarConductor extends AppCompatActivity {
         setContentView(R.layout.activity_solicitar_conductor);
 
         VideoView videoView = findViewById(R.id.viedo_map);
-        String videoPath = "android.resource://"+getPackageName()+"/"+R.raw.Map;
+        String videoPath = "android.resource://"+getPackageName()+"/"+R.raw.map;
         Uri uri = Uri.parse(videoPath);
         videoView.setVideoURI(uri);
 
