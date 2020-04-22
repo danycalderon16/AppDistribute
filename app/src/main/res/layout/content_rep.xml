@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".Activities.ClienteActivity"
-    tools:showIn="@layout/activity_main">
+    tools:context=".Activities.RepartidorActivity"
+    tools:showIn="@layout/activity_repartidor">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/recyclerViewRep"
         android:layout_width="match_parent"
         android:layout_height="500dp"
         android:layout_margin="10dp"

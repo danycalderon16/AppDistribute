@@ -79,7 +79,7 @@ public class AdapterTiendas extends RecyclerView.Adapter<AdapterTiendas.ViewHold
     }
 
     // Declaramos nuestra interfaz con el/los método/s a implementar
-    public interface OnItemClickListener {
+    public interface OnItemClickListener{
         void onItemClick(Tienda tienda, int position);
     }
 }

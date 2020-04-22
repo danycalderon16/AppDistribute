@@ -1,10 +1,13 @@
-package com.calderon.distribute;
+package com.calderon.distribute.Activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.calderon.distribute.Adapters.AdapterTiendas;
 import com.calderon.distribute.Models.Tienda;
+import com.calderon.distribute.R;
+import com.calderon.distribute.Utils.Util;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -21,7 +24,7 @@ import android.view.MenuItem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class ClienteActivity extends AppCompatActivity {
 
     private List<Tienda> tiendaList;
 
@@ -30,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
+    private SharedPreferences spTiendas;
+    private  FloatingActionButton fab;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,26 +43,17 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        final FloatingActionButton fab = findViewById(R.id.fab);
+        fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,SolicitarConductor.class);
+                Intent intent = new Intent(ClienteActivity.this, SolicitarConductor.class);
                 startActivity(intent);
             }
         });
 
-        tiendaList = new ArrayList<Tienda>(){
-            {
-                add(new Tienda());
-                add(new Tienda());
-                add(new Tienda());
-                add(new Tienda());
-                add(new Tienda());
-                add(new Tienda());
-                add(new Tienda());
-            }
-        };
+        spTiendas = getSharedPreferences("tiendas",MODE_PRIVATE);
+        tiendaList = Util.loadDataFromTienda(spTiendas);
 
         mRecyclerView =  findViewById(R.id.recyclerView);
         mLayoutManager = new LinearLayoutManager(this);

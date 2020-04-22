@@ -1,31 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Activities.SolicitarConductor">
-
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/layout_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            app:title="Solicitar Conductor"
-            app:titleTextColor="@color/white"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-    </com.google.android.material.appbar.AppBarLayout>
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="4dp"
+    android:layout_margin="10dp"
+    android:background="@color/yellow_primary">
 
     <LinearLayout
         android:id="@+id/layout_super"
@@ -48,7 +30,8 @@
                 android:layout_margin="10dp"
                 android:text="Seleccione la hora"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -80,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="10:00 hrs"
-                android:id="@+id/hour"
+                android:id="@+id/horaSC"
                 android:textSize="18sp" />
 
             <TextView
@@ -88,11 +71,11 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="3"
-                android:id="@+id/cant"
+                android:id="@+id/cantSC"
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/desc"
+                android:id="@+id/descSC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -103,30 +86,4 @@
 
     </LinearLayout>
 
-    <VideoView
-        android:id="@+id/viedo_map"
-        android:layout_width="402dp"
-        android:layout_height="206dp"
-        android:layout_above="@id/buttonSC"
-        android:layout_below="@id/layout_super"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp" />
-
-
-    <Button
-        android:id="@+id/buttonSC"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimaryDark"
-        android:text="Solicitar Conductor"
-        android:textSize="20sp"
-        android:textColor="#FFF" />
-
-
-</RelativeLayout>
+</androidx.cardview.widget.CardView>
